@@ -1,0 +1,401 @@
+﻿.left-rail {
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 10px;
+  z-index: 20;
+}
+
+.left-rail a,
+.contact-footer a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(207, 172, 255, 0.65);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  background: rgba(45, 18, 90, 0.5);
+  backdrop-filter: blur(3px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.left-rail a:hover,
+.contact-footer a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 190, 255, 0.95);
+  box-shadow: 0 0 16px rgba(150, 89, 255, 0.42);
+}
+
+.contact-link {
+  position: fixed;
+  right: 22px;
+  top: 18px;
+  z-index: 20;
+  color: var(--text);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+.tiny-label {
+  color: #d3d6ff;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.title-box {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.4rem, 3.4vw, 2.35rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  padding: 6px 14px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 12px rgba(181, 114, 255, 0.86);
+}
+
+.intro-name,
+.project-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 18px 0 12px;
+  text-transform: uppercase;
+}
+
+.intro-name span {
+  color: var(--cyan);
+}
+
+.section-sub {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.cursor-orb-zone {
+  position: relative;
+  width: clamp(150px, 26vw, 280px);
+  height: clamp(150px, 26vw, 280px);
+  border-radius: 50%;
+  margin: 8px 0 16px;
+  background: radial-gradient(circle, rgba(163, 103, 255, 0.34), rgba(53, 14, 95, 0.48) 62%, rgba(20, 4, 39, 0.2));
+  border: 1px solid rgba(193, 156, 255, 0.52);
+  box-shadow: inset 0 0 42px rgba(183, 115, 255, 0.28), 0 0 40px rgba(138, 61, 255, 0.4);
+  overflow: hidden;
+}
+
+.cursor-core,
+.cursor-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.cursor-core {
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle, rgba(247, 224, 255, 0.96), rgba(169, 99, 255, 0.92));
+  box-shadow: 0 0 18px rgba(195, 123, 255, 0.72);
+}
+
+.cursor-ring {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed rgba(214, 188, 255, 0.58);
+  animation: spin 7s linear infinite;
+}
+
+.cursor-trail {
+  position: absolute;
+  inset: 0;
+}
+
+.trail-ball {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f4dcff 0%, #a565ff 70%);
+  box-shadow: 0 0 10px rgba(170, 99, 255, 0.85);
+  transform: translate(-50%, -50%);
+}
+
+.tech-animation {
+  position: relative;
+  width: clamp(140px, 22vw, 220px);
+  height: clamp(140px, 22vw, 220px);
+  margin: 8px 0 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 255, 0.42);
+}
+
+.skill-animation span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(213, 186, 255, 0.32);
+  animation: pulseRing 3.6s ease-in-out infinite;
+}
+
+.skill-animation span:nth-child(2) { inset: 14%; animation-delay: 0.4s; }
+.skill-animation span:nth-child(3) { inset: 28%; animation-delay: 0.8s; }
+.skill-animation span:nth-child(4) { inset: 42%; animation-delay: 1.2s; }
+.skill-animation span:nth-child(5) { inset: 46%; border-style: dashed; animation-delay: 1.6s; }
+
+.project-animation {
+  border-color: rgba(184, 144, 255, 0.58);
+  box-shadow: inset 0 0 36px rgba(133, 62, 255, 0.26);
+}
+
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 196, 255, 0.4);
+  inset: 18%;
+}
+
+.ring-2 {
+  inset: 35%;
+}
+
+.radar-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f2dbff;
+  box-shadow: 0 0 10px rgba(211, 166, 255, 0.9);
+  left: 50%;
+  top: 50%;
+  transform-origin: -56px 0;
+  animation: radarSweep 2.8s linear infinite;
+}
+
+.panel-action,
+.contact-form button {
+  border: 1px solid rgba(186, 150, 255, 0.72);
+  background: linear-gradient(130deg, rgba(56, 18, 112, 0.7), rgba(128, 48, 203, 0.8));
+  color: #eef6ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 240ms ease, box-shadow 260ms ease, border-color 220ms ease;
+}
+
+.panel-action:hover,
+.contact-form button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(231, 201, 255, 0.95);
+  box-shadow: 0 10px 22px rgba(116, 36, 209, 0.45);
+}
+
+.info-card {
+  margin-top: 16px;
+  max-width: 600px;
+  background: linear-gradient(145deg, rgba(31, 10, 65, 0.78), rgba(58, 21, 97, 0.72));
+  border: 1px solid rgba(183, 138, 255, 0.56);
+  border-radius: 12px;
+  padding: 18px;
+  line-height: 1.5;
+  color: #f0e5ff;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 30px rgba(44, 10, 81, 0.46);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  will-change: opacity, transform, filter;
+  transition: opacity 360ms cubic-bezier(0.16, 1, 0.3, 1), transform 360ms cubic-bezier(0.16, 1, 0.3, 1), filter 360ms ease;
+}
+
+.info-card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #9decff;
+  text-decoration: none;
+}
+
+.planet {
+  position: absolute;
+  bottom: -280px;
+  width: min(920px, 96vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 45% 35%, rgba(176, 114, 255, 0.95), rgba(96, 36, 180, 0.95) 42%, rgba(55, 19, 116, 0.98) 82%),
+    radial-gradient(circle at 60% 65%, rgba(216, 164, 255, 0.48), transparent 42%);
+  box-shadow: 0 -20px 70px rgba(141, 62, 255, 0.5);
+  z-index: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 60px;
+  border: 1px solid rgba(212, 206, 255, 0.58);
+  background: rgba(25, 15, 72, 0.55);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 8;
+}
+
+.arrow.left {
+  left: 16px;
+}
+
+.arrow.right {
+  right: 16px;
+}
+
+.panel-hint {
+  position: absolute;
+  bottom: 16px;
+  border: 1px solid rgba(220, 218, 255, 0.62);
+  background: rgba(11, 8, 34, 0.6);
+  color: #eff0ff;
+  padding: 8px 12px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.panel-hint.prev {
+  left: 16px;
+}
+
+.panel-hint.next {
+  right: 16px;
+}
+
+.contact-form {
+  width: min(640px, 92vw);
+  background: rgba(44, 21, 88, 0.52);
+  border: 1px solid rgba(180, 136, 255, 0.62);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.contact-form span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(184, 145, 255, 0.54);
+  background: rgba(145, 100, 219, 0.2);
+  color: #f9f4ff;
+  padding: 10px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+}
+
+.form-status {
+  min-height: 18px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: #e9d2ff;
+}
+
+.contact-footer {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.back-link {
+  align-self: flex-start;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  margin-bottom: 20px;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulseRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .left-rail,
+  .panel-hint,
+  .arrow {
+    display: none;
+  }
+
+  .contact-link {
+    right: 12px;
+    top: 10px;
+    font-size: 0.76rem;
+  }
+
+  .planet {
+    bottom: -190px;
+  }
+}

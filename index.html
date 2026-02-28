@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galaxy Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div class="starfield"></div>
+
+  <aside class="left-rail">
+    <a href="https://github.com/mrkasif" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+    <a href="https://www.linkedin.com/in/kashif-sayyad" target="_blank" rel="noreferrer" aria-label="LinkedIn">IN</a>
+  </aside>
+
+  <a class="contact-link" href="#contact">CONTACT ME</a>
+
+  <main id="app" class="panel-stack">
+    <section id="home" class="panel hero-bg active">
+      <div class="panel-inner">
+        <p class="tiny-label">A MESSAGE FROM EARTH</p>
+        <h1 class="title-box">HELLO FELLOW GALAXY MEMBER</h1>
+        <h2 class="intro-name">I AM <span>KASHIF SAYYAD</span></h2>
+
+        <div class="cursor-orb-zone" aria-label="Interactive orb animation" role="img">
+          <div class="cursor-core"></div>
+          <div class="cursor-ring"></div>
+          <div id="cursor-trail" class="cursor-trail"></div>
+        </div>
+
+        <button class="panel-action" data-open="about">CLICK TO OPEN</button>
+
+        <article id="about" class="info-card hidden">
+          <p>
+            I build immersive web products with strong UI systems, front-end performance,
+            and motion design. I enjoy creating experiences that feel cinematic and still stay usable.
+          </p>
+        </article>
+      </div>
+      <div class="planet"></div>
+      <button class="panel-hint prev" data-dir="up">PRESS</button>
+      <button class="panel-hint next" data-dir="down">SCROLL</button>
+    </section>
+
+    <section id="skills" class="panel skills-bg">
+      <div class="panel-inner">
+        <h2 class="title-box">MY SKILLS</h2>
+        <p class="section-sub">HERE IS A LIST OF SOME OF MY SKILLS</p>
+
+        <div class="tech-animation skill-animation" aria-label="Skill animation" role="img">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="skill-item"><i class="devicon-nodejs-plain colored"></i><span>Node JS</span></div>
+          <div class="skill-item"><i class="devicon-nextjs-original"></i><span>Next JS</span></div>
+          <div class="skill-item"><i class="devicon-azuresqldatabase-plain colored"></i><span>SQL</span></div>
+          <div class="skill-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+          <div class="skill-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="skill-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="skill-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+          <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+          <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+          <div class="skill-item"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+          <div class="skill-item"><i class="devicon-vitejs-plain colored"></i><span>Vite</span></div>
+          <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        </div>
+      </div>
+      <div class="planet"></div>
+      <button class="panel-hint prev" data-dir="up">PRESS</button>
+      <button class="panel-hint next" data-dir="down">SCROLL</button>
+    </section>
+
+    <section id="projects" class="panel projects-bg">
+      <div class="panel-inner">
+        <h2 class="title-box">MY PROJECTS</h2>
+        <p class="section-sub">CLICK ANY WINDOW TO OPEN YOUR PROJECT</p>
+        <div id="project-grid" class="project-canvas-grid"></div>
+      </div>
+
+      <div class="planet"></div>
+      <button class="panel-hint prev" data-dir="up">PRESS</button>
+      <button class="panel-hint next" data-dir="down">SCROLL</button>
+    </section>
+
+    <section id="vision" class="panel vision-bg">
+      <div class="panel-inner narrow">
+        <h2 class="title-box">TECH VISION</h2>
+        <p class="section-sub">MY MISSION</p>
+        <article class="info-card vision-card">
+          <p id="vision-text" data-text="I am an Information Technology student with a strong passion for building innovative digital products. My primary goal is to become a skilled game developer and full-stack web and app developer, capable of designing, developing, and deploying scalable solutions. I am deeply interested in startups and entrepreneurship within the tech ecosystem, where I aim to create impactful software products that solve real-world problems. I continuously work on improving my technical skills in programming, software architecture, and product development, and I am driven by curiosity, creativity, and a long-term vision of contributing meaningfully to the technology industry."></p>
+        </article>
+      </div>
+      <div class="planet"></div>
+      <button class="panel-hint prev" data-dir="up">PRESS</button>
+      <button class="panel-hint next" data-dir="down">SCROLL</button>
+    </section>
+
+    <section id="contact" class="panel contact-bg">
+      <div class="panel-inner narrow">
+        <a class="back-link" href="#vision">&lt; GO BACK</a>
+        <h2 class="title-box">CONTACT ME</h2>
+
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/kashifsayyad21@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting me. I received your message and will get back to you soon." />
+          <label>
+            <span>YOUR EMAIL:</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>SUBJECT:</span>
+            <input type="text" name="subject" placeholder="Project Inquiry" required />
+          </label>
+          <label>
+            <span>CONTENT:</span>
+            <textarea name="message" rows="6" placeholder="Write your message" required></textarea>
+          </label>
+          <button type="submit">SEND TRANSMISSION</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+      <div class="contact-footer">
+        <a href="https://github.com/mrkasif" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+        <a href="https://www.linkedin.com/in/kashif-sayyad" target="_blank" rel="noreferrer" aria-label="LinkedIn">IN</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

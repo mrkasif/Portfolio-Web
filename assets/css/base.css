@@ -1,0 +1,92 @@
+﻿:root {
+  --bg-1: #070015;
+  --bg-2: #13032a;
+  --cyan: #b493ff;
+  --violet: #8f58ff;
+  --line: rgba(183, 141, 255, 0.62);
+  --text: #f7f2ff;
+  --muted: #d3c1ff;
+  --panel-w: min(1040px, 92vw);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--text);
+  font-family: "Rajdhani", sans-serif;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  overflow: hidden;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(192, 147, 255, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 30%, rgba(142, 96, 255, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 45% 70%, rgba(198, 151, 255, 0.4) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 56%, rgba(124, 82, 255, 0.3) 0 1px, transparent 2px);
+  background-size: 180px 180px, 220px 220px, 160px 160px, 140px 140px;
+  opacity: 0.65;
+  z-index: -2;
+}
+
+.panel-stack {
+  height: 100vh;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.panel {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 28px 0 18px;
+  overflow: hidden;
+}
+
+.panel-inner {
+  width: var(--panel-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.panel-inner.narrow {
+  width: min(760px, 90vw);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .panel-stack {
+    transform: none !important;
+    transition: none;
+  }
+
+  .panel {
+    min-height: 100svh;
+  }
+}

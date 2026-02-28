@@ -1,0 +1,172 @@
+﻿.hero-bg {
+  background:
+    radial-gradient(1200px 560px at 50% 105%, rgba(136, 73, 255, 0.42), transparent 55%),
+    linear-gradient(180deg, #15022e 0%, #120325 45%, #0c011a 100%);
+}
+
+.skills-bg {
+  background:
+    radial-gradient(1000px 460px at 50% -10%, rgba(180, 108, 255, 0.24), transparent 45%),
+    linear-gradient(180deg, #170331 0%, #1a0539 42%, #100127 100%);
+}
+
+.projects-bg {
+  background:
+    radial-gradient(900px 420px at 50% 8%, rgba(165, 84, 255, 0.24), transparent 45%),
+    linear-gradient(180deg, #12022d 0%, #17033a 40%, #0d0122 100%);
+}
+
+.contact-bg {
+  background:
+    radial-gradient(860px 390px at 50% 0%, rgba(170, 92, 255, 0.3), transparent 42%),
+    linear-gradient(180deg, #0f0228 0%, #1a0440 35%, #0a0119 100%);
+}
+
+.vision-bg {
+  background:
+    radial-gradient(920px 380px at 50% 0%, rgba(151, 84, 255, 0.3), transparent 48%),
+    linear-gradient(180deg, #0d0122 0%, #170337 45%, #090118 100%);
+}
+
+.skills-grid {
+  width: min(720px, 94vw);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.skills-grid span {
+  border: 1px solid rgba(191, 145, 255, 0.65);
+  background: rgba(66, 25, 120, 0.45);
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.skill-item {
+  border: 1px solid rgba(191, 145, 255, 0.65);
+  background: rgba(66, 25, 120, 0.45);
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+.skill-item i {
+  font-size: 1.2rem;
+  color: #f4e9ff;
+}
+
+.skill-item span {
+  border: none;
+  background: transparent;
+  min-height: auto;
+  display: block;
+  text-align: left;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+}
+
+.vision-card {
+  max-width: 760px;
+}
+
+#vision-text {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+  color: #f6e8ff;
+  text-shadow: 0 0 8px rgba(174, 127, 255, 0.45);
+}
+
+#project-title {
+  margin-bottom: 4px;
+}
+
+.project-canvas-grid {
+  width: min(900px, 95vw);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.project-window {
+  border: 1px solid rgba(189, 143, 255, 0.65);
+  background: rgba(46, 15, 96, 0.44);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 220ms ease, box-shadow 240ms ease, border-color 220ms ease;
+}
+
+.project-window:hover {
+  transform: translateY(-3px);
+  border-color: rgba(223, 194, 255, 0.95);
+  box-shadow: 0 14px 26px rgba(73, 20, 131, 0.5);
+}
+
+.project-preview {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(178, 139, 255, 0.45);
+  background: radial-gradient(circle at 20% 20%, rgba(185, 127, 255, 0.2), rgba(36, 10, 78, 0.85));
+}
+
+.project-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.project-name {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  color: #e3ccff;
+  border: 1px solid rgba(190, 148, 255, 0.54);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills-grid span {
+    min-height: 48px;
+  }
+
+  .project-canvas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .project-canvas-grid {
+    grid-template-columns: 1fr;
+  }
+}
