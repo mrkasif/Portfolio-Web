@@ -13,12 +13,19 @@ const visionTextEl = document.getElementById("vision-text");
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 let visionTyped = false;
+let projectOrbitDesktop = window.innerWidth > 900;
 
 function renderProjectGrid() {
   if (!projectGrid) return;
   projectGrid.innerHTML = "";
+  const useOrbitTrack = window.innerWidth > 900;
+  const orbitCycles = useOrbitTrack ? 3 : 1;
+  const loopedProjects = Array.from({ length: orbitCycles }, () => projects).flat();
+  const track = document.createElement("div");
+  track.className = "project-orbit-track";
+  projectGrid.classList.toggle("is-orbiting", useOrbitTrack);
 
-  projects.forEach((project) => {
+  loopedProjects.forEach((project) => {
     const card = document.createElement("article");
     card.className = "project-window";
     card.tabIndex = 0;
@@ -43,25 +50,14 @@ function renderProjectGrid() {
     });
 
     card.append(preview, meta);
-    projectGrid.appendChild(card);
+    track.appendChild(card);
   });
+
+  projectGrid.appendChild(track);
 }
 
 function applyProjectTilt() {
-  document.querySelectorAll(".project-window").forEach((card) => {
-    card.addEventListener("mousemove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const px = (event.clientX - rect.left) / rect.width;
-      const py = (event.clientY - rect.top) / rect.height;
-      const rotateY = (px - 0.5) * 10;
-      const rotateX = (0.5 - py) * 10;
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)";
-    });
-  });
+  return;
 }
 
 function moveTo(index) {
@@ -106,6 +102,11 @@ function step(dir) {
   moveTo(activeIndex + dir);
 }
 
+function goToPanel(panelId) {
+  const index = panels.findIndex((panel) => panel.id === panelId);
+  if (index >= 0) moveTo(index);
+}
+
 document.addEventListener(
   "wheel",
   (event) => {
@@ -132,13 +133,23 @@ document.querySelectorAll(".panel-hint").forEach((button) => {
 document.querySelector(".contact-link")?.addEventListener("click", (event) => {
   if (window.innerWidth <= 900) return;
   event.preventDefault();
-  moveTo(panels.findIndex((panel) => panel.id === "contact"));
+  goToPanel("contact");
 });
 
 document.querySelector(".back-link")?.addEventListener("click", (event) => {
   if (window.innerWidth <= 900) return;
   event.preventDefault();
-  moveTo(panels.findIndex((panel) => panel.id === "vision"));
+  goToPanel("about-me");
+});
+
+document.querySelectorAll(".top-nav [data-panel]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    if (window.innerWidth <= 900) return;
+    event.preventDefault();
+    const panelId = link.getAttribute("data-panel");
+    if (!panelId) return;
+    goToPanel(panelId);
+  });
 });
 
 document.querySelectorAll("[data-open]").forEach((trigger) => {
@@ -216,3 +227,11 @@ contactForm?.addEventListener("submit", async (event) => {
 
 renderProjectGrid();
 applyProjectTilt();
+
+window.addEventListener("resize", () => {
+  const isDesktop = window.innerWidth > 900;
+  if (isDesktop === projectOrbitDesktop) return;
+  projectOrbitDesktop = isDesktop;
+  renderProjectGrid();
+  applyProjectTilt();
+});

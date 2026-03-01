@@ -1,4 +1,56 @@
-﻿.left-rail {
+.top-nav {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1040px, calc(100vw - 24px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border: 1px solid rgba(162, 173, 190, 0.5);
+  border-radius: 12px;
+  background: rgba(11, 14, 20, 0.76);
+  box-shadow: 0 0 24px rgba(109, 121, 138, 0.18);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+}
+
+.top-nav .brand,
+.top-nav nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+}
+
+.top-nav .brand {
+  font-weight: 700;
+  padding: 6px 8px;
+}
+
+.top-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.top-nav nav a {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px 8px;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.top-nav nav a:hover {
+  border-color: rgba(190, 201, 216, 0.75);
+  box-shadow: 0 0 14px rgba(120, 131, 148, 0.35);
+}
+
+.left-rail {
   position: fixed;
   left: 18px;
   top: 50%;
@@ -12,7 +64,7 @@
 .contact-footer a {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(207, 172, 255, 0.65);
+  border: 1px solid rgba(166, 177, 193, 0.65);
   border-radius: 8px;
   color: var(--text);
   font-size: 0.72rem;
@@ -20,7 +72,7 @@
   display: grid;
   place-items: center;
   text-decoration: none;
-  background: rgba(45, 18, 90, 0.5);
+  background: rgba(11, 14, 20, 0.78);
   backdrop-filter: blur(3px);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
@@ -28,14 +80,14 @@
 .left-rail a:hover,
 .contact-footer a:hover {
   transform: translateY(-2px);
-  border-color: rgba(217, 190, 255, 0.95);
-  box-shadow: 0 0 16px rgba(150, 89, 255, 0.42);
+  border-color: rgba(200, 210, 223, 0.95);
+  box-shadow: 0 0 16px rgba(120, 130, 146, 0.42);
 }
 
 .contact-link {
   position: fixed;
   right: 22px;
-  top: 18px;
+  top: 76px;
   z-index: 20;
   color: var(--text);
   text-decoration: none;
@@ -45,7 +97,7 @@
 }
 
 .tiny-label {
-  color: #d3d6ff;
+  color: #d4dbe7;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
   margin-bottom: 6px;
@@ -60,7 +112,7 @@
   border-bottom: 2px solid var(--line);
   padding: 6px 14px;
   margin-bottom: 14px;
-  text-shadow: 0 0 12px rgba(181, 114, 255, 0.86);
+  text-shadow: 0 0 12px rgba(165, 174, 189, 0.72);
 }
 
 .intro-name,
@@ -88,10 +140,144 @@
   height: clamp(150px, 26vw, 280px);
   border-radius: 50%;
   margin: 8px 0 16px;
-  background: radial-gradient(circle, rgba(163, 103, 255, 0.34), rgba(53, 14, 95, 0.48) 62%, rgba(20, 4, 39, 0.2));
-  border: 1px solid rgba(193, 156, 255, 0.52);
-  box-shadow: inset 0 0 42px rgba(183, 115, 255, 0.28), 0 0 40px rgba(138, 61, 255, 0.4);
+  background: radial-gradient(circle, rgba(168, 177, 192, 0.28), rgba(42, 45, 56, 0.52) 62%, rgba(13, 14, 20, 0.24));
+  border: 1px solid rgba(171, 179, 194, 0.46);
+  box-shadow: inset 0 0 42px rgba(138, 148, 164, 0.26), 0 0 40px rgba(96, 104, 120, 0.32);
   overflow: hidden;
+}
+
+.planet-cosmos,
+.code-star,
+.mini-planet {
+  position: absolute;
+}
+
+.planet-cosmos {
+  bottom: -265px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1080px, 100vw);
+  aspect-ratio: 1;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 3% 10%, rgba(238, 241, 246, 0.92) 0 1px, transparent 2px),
+    radial-gradient(circle at 8% 16%, rgba(201, 209, 222, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 11% 24%, rgba(170, 179, 194, 0.68) 0 1px, transparent 2px),
+    radial-gradient(circle at 10% 26%, rgba(230, 235, 243, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 14% 36%, rgba(196, 205, 220, 0.72) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 20%, rgba(149, 158, 174, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 14%, rgba(210, 218, 232, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 26% 31%, rgba(132, 141, 158, 0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 74% 11%, rgba(206, 214, 227, 0.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 16%, rgba(176, 184, 199, 0.56) 0 1px, transparent 2px),
+    radial-gradient(circle at 85% 22%, rgba(220, 226, 237, 0.66) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 30%, rgba(195, 203, 218, 0.6) 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 44%, rgba(142, 151, 166, 0.48) 0 1px, transparent 2px);
+  animation: cosmosPulse 4.2s ease-in-out infinite;
+}
+
+.planet-cosmos::before,
+.planet-cosmos::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: inset -7px -9px 12px rgba(0, 0, 0, 0.2), 0 0 16px rgba(151, 203, 169, 0.38), 0 0 14px rgba(155, 104, 215, 0.38);
+  animation: orbitFloat 6s ease-in-out infinite;
+}
+
+.planet-cosmos::before {
+  width: 36px;
+  height: 36px;
+  left: 2%;
+  top: 23%;
+  background: radial-gradient(circle at 28% 24%, #d9ffe7, #79cd9f 56%, #6b3fc4);
+}
+
+.planet-cosmos::after {
+  width: 24px;
+  height: 24px;
+  left: 7%;
+  top: 42%;
+  background: radial-gradient(circle at 30% 24%, #eddfff, #a982e8 55%, #4ebc87);
+  animation-delay: 1.2s;
+}
+
+.code-star {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.58rem, 1vw, 0.8rem);
+  color: rgba(228, 233, 240, 0.9);
+  text-shadow: 0 0 8px rgba(180, 188, 204, 0.8);
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+.planet-cosmos .star-a { top: 14%; left: 12%; animation-delay: 0.2s; }
+.planet-cosmos .star-b { top: 11%; right: 16%; animation-delay: 1.1s; }
+.planet-cosmos .star-c { top: 31%; left: 8%; animation-delay: 1.7s; }
+.planet-cosmos .star-d { top: 25%; right: 8%; animation-delay: 0.8s; }
+.planet-cosmos .star-e { top: 20%; left: 20%; animation-delay: 0.5s; }
+.planet-cosmos .star-f { top: 18%; right: 25%; animation-delay: 1.9s; }
+.planet-cosmos .star-g { top: 37%; left: 14%; animation-delay: 1.4s; }
+.planet-cosmos .star-h { top: 32%; right: 20%; animation-delay: 2.1s; }
+
+.mini-planet {
+  border-radius: 50%;
+  box-shadow: inset -6px -8px 10px rgba(0, 0, 0, 0.34), 0 0 16px rgba(155, 108, 219, 0.48), 0 0 14px rgba(127, 199, 160, 0.42);
+  animation: orbitFloat 6s ease-in-out infinite, planetGlow 3.1s ease-in-out infinite;
+}
+
+.mini-planet-1 {
+  width: 38px;
+  height: 38px;
+  top: 11%;
+  left: 28%;
+  background: radial-gradient(circle at 30% 28%, #e5ffd8, #8bde8f 50%, #763fd0 84%);
+}
+
+.mini-planet-2 {
+  width: 26px;
+  height: 26px;
+  top: 14%;
+  right: 30%;
+  background: radial-gradient(circle at 30% 30%, #f0deff, #ba86ef 52%, #4ac47f);
+  animation-delay: 0.8s;
+}
+
+.mini-planet-3 {
+  width: 30px;
+  height: 30px;
+  top: 26%;
+  right: 16%;
+  background: radial-gradient(circle at 32% 27%, #d7ffde, #74cf98 52%, #7642d1);
+  animation-delay: 1.4s;
+}
+
+.mini-planet-4 {
+  width: 20px;
+  height: 20px;
+  top: 23%;
+  left: 18%;
+  background: radial-gradient(circle at 30% 30%, #f2e0ff, #bf8cf4 50%, #53c784);
+  animation-delay: 0.9s;
+}
+
+.mini-planet-5 {
+  width: 18px;
+  height: 18px;
+  top: 34%;
+  left: 24%;
+  background: radial-gradient(circle at 30% 30%, #dcffe3, #79d29b 54%, #7345cc);
+  animation-delay: 1.8s;
+}
+
+.mini-planet-6 {
+  width: 22px;
+  height: 22px;
+  top: 20%;
+  right: 10%;
+  background: radial-gradient(circle at 30% 28%, #ebdbff, #b584ec 54%, #4fbe85);
+  animation-delay: 2.2s;
 }
 
 .cursor-core,
@@ -106,20 +292,23 @@
 .cursor-core {
   width: 36px;
   height: 36px;
-  background: radial-gradient(circle, rgba(247, 224, 255, 0.96), rgba(169, 99, 255, 0.92));
-  box-shadow: 0 0 18px rgba(195, 123, 255, 0.72);
+  background: radial-gradient(circle, rgba(241, 245, 251, 0.96), rgba(144, 153, 168, 0.92));
+  box-shadow: 0 0 18px rgba(173, 182, 196, 0.6);
+  z-index: 2;
 }
 
 .cursor-ring {
   width: 100px;
   height: 100px;
-  border: 1px dashed rgba(214, 188, 255, 0.58);
+  border: 1px dashed rgba(183, 193, 207, 0.58);
   animation: spin 7s linear infinite;
+  z-index: 2;
 }
 
 .cursor-trail {
   position: absolute;
   inset: 0;
+  z-index: 3;
 }
 
 .trail-ball {
@@ -127,8 +316,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f4dcff 0%, #a565ff 70%);
-  box-shadow: 0 0 10px rgba(170, 99, 255, 0.85);
+  background: radial-gradient(circle, #eef2f8 0%, #8993a7 70%);
+  box-shadow: 0 0 10px rgba(166, 177, 191, 0.72);
   transform: translate(-50%, -50%);
 }
 
@@ -138,14 +327,14 @@
   height: clamp(140px, 22vw, 220px);
   margin: 8px 0 16px;
   border-radius: 50%;
-  border: 1px solid rgba(197, 160, 255, 0.42);
+  border: 1px solid rgba(160, 171, 188, 0.42);
 }
 
 .skill-animation span {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(213, 186, 255, 0.32);
+  border: 1px solid rgba(176, 187, 202, 0.32);
   animation: pulseRing 3.6s ease-in-out infinite;
 }
 
@@ -155,14 +344,14 @@
 .skill-animation span:nth-child(5) { inset: 46%; border-style: dashed; animation-delay: 1.6s; }
 
 .project-animation {
-  border-color: rgba(184, 144, 255, 0.58);
-  box-shadow: inset 0 0 36px rgba(133, 62, 255, 0.26);
+  border-color: rgba(156, 168, 184, 0.58);
+  box-shadow: inset 0 0 36px rgba(109, 121, 138, 0.26);
 }
 
 .radar-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(220, 196, 255, 0.4);
+  border: 1px solid rgba(186, 197, 212, 0.4);
   inset: 18%;
 }
 
@@ -175,8 +364,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #f2dbff;
-  box-shadow: 0 0 10px rgba(211, 166, 255, 0.9);
+  background: #e7edf5;
+  box-shadow: 0 0 10px rgba(173, 184, 200, 0.85);
   left: 50%;
   top: 50%;
   transform-origin: -56px 0;
@@ -185,9 +374,9 @@
 
 .panel-action,
 .contact-form button {
-  border: 1px solid rgba(186, 150, 255, 0.72);
-  background: linear-gradient(130deg, rgba(56, 18, 112, 0.7), rgba(128, 48, 203, 0.8));
-  color: #eef6ff;
+  border: 1px solid rgba(160, 171, 188, 0.72);
+  background: linear-gradient(130deg, rgba(41, 45, 56, 0.76), rgba(92, 102, 118, 0.8));
+  color: #e9eff8;
   font-family: "Orbitron", sans-serif;
   font-size: 0.86rem;
   letter-spacing: 0.05em;
@@ -201,21 +390,21 @@
 .panel-action:hover,
 .contact-form button:hover {
   transform: translateY(-2px);
-  border-color: rgba(231, 201, 255, 0.95);
-  box-shadow: 0 10px 22px rgba(116, 36, 209, 0.45);
+  border-color: rgba(208, 217, 229, 0.95);
+  box-shadow: 0 10px 22px rgba(23, 27, 35, 0.55);
 }
 
 .info-card {
   margin-top: 16px;
   max-width: 600px;
-  background: linear-gradient(145deg, rgba(31, 10, 65, 0.78), rgba(58, 21, 97, 0.72));
-  border: 1px solid rgba(183, 138, 255, 0.56);
+  background: linear-gradient(145deg, rgba(20, 23, 31, 0.84), rgba(35, 39, 49, 0.74));
+  border: 1px solid rgba(154, 165, 182, 0.56);
   border-radius: 12px;
   padding: 18px;
   line-height: 1.5;
-  color: #f0e5ff;
+  color: #e6ecf5;
   backdrop-filter: blur(8px);
-  box-shadow: 0 14px 30px rgba(44, 10, 81, 0.46);
+  box-shadow: 0 14px 30px rgba(13, 16, 24, 0.56);
   transform: translateY(0) scale(1);
   filter: blur(0);
   will-change: opacity, transform, filter;
@@ -225,7 +414,7 @@
 .info-card a {
   display: inline-block;
   margin-top: 12px;
-  color: #9decff;
+  color: #d3dbe7;
   text-decoration: none;
 }
 
@@ -236,9 +425,10 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 45% 35%, rgba(176, 114, 255, 0.95), rgba(96, 36, 180, 0.95) 42%, rgba(55, 19, 116, 0.98) 82%),
-    radial-gradient(circle at 60% 65%, rgba(216, 164, 255, 0.48), transparent 42%);
-  box-shadow: 0 -20px 70px rgba(141, 62, 255, 0.5);
+    radial-gradient(circle at 42% 26%, rgba(178, 188, 204, 0.34), rgba(74, 82, 96, 0.24) 36%, rgba(18, 20, 28, 0.98) 78%),
+    radial-gradient(circle at 64% 68%, rgba(196, 205, 218, 0.24), transparent 42%),
+    radial-gradient(circle at 30% 50%, rgba(132, 142, 158, 0.2), transparent 48%);
+  box-shadow: 0 -24px 86px rgba(146, 156, 173, 0.28), 0 -14px 52px rgba(88, 97, 112, 0.26), 0 -10px 34px rgba(12, 14, 20, 0.84);
   z-index: 1;
 }
 
@@ -248,8 +438,8 @@
   transform: translateY(-50%);
   width: 42px;
   height: 60px;
-  border: 1px solid rgba(212, 206, 255, 0.58);
-  background: rgba(25, 15, 72, 0.55);
+  border: 1px solid rgba(181, 191, 206, 0.58);
+  background: rgba(18, 22, 30, 0.72);
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
@@ -267,8 +457,8 @@
 .panel-hint {
   position: absolute;
   bottom: 16px;
-  border: 1px solid rgba(220, 218, 255, 0.62);
-  background: rgba(11, 8, 34, 0.6);
+  border: 1px solid rgba(188, 199, 214, 0.62);
+  background: rgba(12, 15, 22, 0.72);
   color: #eff0ff;
   padding: 8px 12px;
   font-family: "Orbitron", sans-serif;
@@ -289,8 +479,8 @@
 
 .contact-form {
   width: min(640px, 92vw);
-  background: rgba(44, 21, 88, 0.52);
-  border: 1px solid rgba(180, 136, 255, 0.62);
+  background: rgba(28, 32, 40, 0.62);
+  border: 1px solid rgba(154, 165, 182, 0.62);
   border-radius: 12px;
   padding: 18px;
   text-align: left;
@@ -311,9 +501,9 @@
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(184, 145, 255, 0.54);
-  background: rgba(145, 100, 219, 0.2);
-  color: #f9f4ff;
+  border: 1px solid rgba(157, 168, 184, 0.54);
+  background: rgba(102, 112, 128, 0.2);
+  color: #eef3fb;
   padding: 10px;
   font-family: "Rajdhani", sans-serif;
   font-size: 1rem;
@@ -324,7 +514,7 @@
   margin-top: 8px;
   font-size: 0.82rem;
   letter-spacing: 0.03em;
-  color: #e9d2ff;
+  color: #d2dae8;
 }
 
 .contact-footer {
@@ -346,6 +536,35 @@
   margin-bottom: 20px;
 }
 
+.about-layout {
+  min-height: 100vh;
+  padding: 110px 16px 40px;
+  display: grid;
+  place-items: start center;
+}
+
+.about-card {
+  width: min(840px, 95vw);
+  background: linear-gradient(145deg, rgba(16, 20, 28, 0.86), rgba(30, 34, 44, 0.74));
+  border: 1px solid rgba(157, 168, 184, 0.54);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 18px 36px rgba(12, 15, 22, 0.52);
+}
+
+.about-card .title-box {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.about-copy {
+  display: grid;
+  gap: 12px;
+  font-size: 1.1rem;
+  color: #e8edf5;
+  line-height: 1.6;
+}
+
 @keyframes floaty {
   0%,
   100% {
@@ -359,6 +578,44 @@
 @keyframes spin {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes orbitFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes planetGlow {
+  0%, 100% {
+    filter: brightness(0.92);
+  }
+  50% {
+    filter: brightness(1.22);
+  }
+}
+
+@keyframes cosmosPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
@@ -383,6 +640,21 @@
 }
 
 @media (max-width: 900px) {
+  .top-nav {
+    top: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .top-nav .brand,
+  .top-nav nav a {
+    font-size: 0.62rem;
+  }
+
+  .top-nav nav {
+    gap: 4px;
+  }
+
   .left-rail,
   .panel-hint,
   .arrow {
@@ -391,11 +663,23 @@
 
   .contact-link {
     right: 12px;
-    top: 10px;
+    top: 58px;
     font-size: 0.76rem;
   }
 
   .planet {
     bottom: -190px;
+  }
+
+  .planet-cosmos {
+    bottom: -185px;
+  }
+
+  .about-layout {
+    padding-top: 94px;
+  }
+
+  .about-copy {
+    font-size: 1rem;
   }
 }

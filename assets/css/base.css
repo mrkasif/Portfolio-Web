@@ -1,11 +1,11 @@
-﻿:root {
-  --bg-1: #070015;
-  --bg-2: #13032a;
-  --cyan: #b493ff;
-  --violet: #8f58ff;
-  --line: rgba(183, 141, 255, 0.62);
-  --text: #f7f2ff;
-  --muted: #d3c1ff;
+:root {
+  --bg-1: #06080c;
+  --bg-2: #0d1118;
+  --cyan: #c9d3e0;
+  --violet: #8e98a8;
+  --line: rgba(166, 177, 193, 0.62);
+  --text: #eef3fb;
+  --muted: #c6cfdd;
   --panel-w: min(1040px, 92vw);
 }
 
@@ -28,17 +28,25 @@ body {
   overflow: hidden;
 }
 
+body.about-page {
+  overflow-y: auto;
+}
+
 .starfield {
   position: fixed;
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle at 20% 15%, rgba(192, 147, 255, 0.55) 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 30%, rgba(142, 96, 255, 0.55) 0 1px, transparent 2px),
-    radial-gradient(circle at 45% 70%, rgba(198, 151, 255, 0.4) 0 1px, transparent 2px),
-    radial-gradient(circle at 62% 56%, rgba(124, 82, 255, 0.3) 0 1px, transparent 2px);
-  background-size: 180px 180px, 220px 220px, 160px 160px, 140px 140px;
-  opacity: 0.65;
+    radial-gradient(circle at 7% 12%, rgba(236, 241, 248, 0.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 15% 64%, rgba(190, 200, 216, 0.46) 0 1px, transparent 2px),
+    radial-gradient(circle at 20% 15%, rgba(223, 231, 242, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 30%, rgba(192, 201, 216, 0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 45% 70%, rgba(165, 174, 192, 0.4) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 56%, rgba(139, 148, 165, 0.3) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 74%, rgba(228, 234, 243, 0.42) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 10%, rgba(166, 176, 193, 0.38) 0 1px, transparent 2px);
+  background-size: 140px 140px, 200px 200px, 180px 180px, 220px 220px, 160px 160px, 140px 140px, 190px 190px, 210px 210px;
+  opacity: 0.82;
   z-index: -2;
 }
 

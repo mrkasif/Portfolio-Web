@@ -1,31 +1,37 @@
-﻿.hero-bg {
+.hero-bg {
   background:
-    radial-gradient(1200px 560px at 50% 105%, rgba(136, 73, 255, 0.42), transparent 55%),
-    linear-gradient(180deg, #15022e 0%, #120325 45%, #0c011a 100%);
+    radial-gradient(1200px 560px at 50% 105%, rgba(98, 108, 124, 0.36), transparent 55%),
+    linear-gradient(180deg, #0f1117 0%, #0b0d12 45%, #07080b 100%);
 }
 
 .skills-bg {
   background:
-    radial-gradient(1000px 460px at 50% -10%, rgba(180, 108, 255, 0.24), transparent 45%),
-    linear-gradient(180deg, #170331 0%, #1a0539 42%, #100127 100%);
+    radial-gradient(1000px 460px at 50% -10%, rgba(115, 125, 142, 0.24), transparent 45%),
+    linear-gradient(180deg, #11141b 0%, #0e1017 42%, #090b10 100%);
 }
 
 .projects-bg {
   background:
-    radial-gradient(900px 420px at 50% 8%, rgba(165, 84, 255, 0.24), transparent 45%),
-    linear-gradient(180deg, #12022d 0%, #17033a 40%, #0d0122 100%);
+    radial-gradient(900px 420px at 50% 8%, rgba(102, 112, 128, 0.24), transparent 45%),
+    linear-gradient(180deg, #0f1219 0%, #0c0f15 40%, #080a0f 100%);
 }
 
 .contact-bg {
   background:
-    radial-gradient(860px 390px at 50% 0%, rgba(170, 92, 255, 0.3), transparent 42%),
-    linear-gradient(180deg, #0f0228 0%, #1a0440 35%, #0a0119 100%);
+    radial-gradient(860px 390px at 50% 0%, rgba(109, 120, 138, 0.28), transparent 42%),
+    linear-gradient(180deg, #0e1118 0%, #0b0e14 35%, #07090d 100%);
 }
 
 .vision-bg {
   background:
-    radial-gradient(920px 380px at 50% 0%, rgba(151, 84, 255, 0.3), transparent 48%),
-    linear-gradient(180deg, #0d0122 0%, #170337 45%, #090118 100%);
+    radial-gradient(920px 380px at 50% 0%, rgba(102, 114, 130, 0.28), transparent 48%),
+    linear-gradient(180deg, #0c0f15 0%, #0a0d13 45%, #07090d 100%);
+}
+
+.about-section-bg {
+  background:
+    radial-gradient(920px 380px at 50% 0%, rgba(110, 122, 140, 0.28), transparent 48%),
+    linear-gradient(180deg, #0c1016 0%, #0a0d13 45%, #07090d 100%);
 }
 
 .skills-grid {
@@ -37,8 +43,8 @@
 }
 
 .skills-grid span {
-  border: 1px solid rgba(191, 145, 255, 0.65);
-  background: rgba(66, 25, 120, 0.45);
+  border: 1px solid rgba(148, 158, 175, 0.6);
+  background: rgba(41, 46, 57, 0.45);
   min-height: 54px;
   display: grid;
   place-items: center;
@@ -48,8 +54,8 @@
 }
 
 .skill-item {
-  border: 1px solid rgba(191, 145, 255, 0.65);
-  background: rgba(66, 25, 120, 0.45);
+  border: 1px solid rgba(148, 158, 175, 0.6);
+  background: rgba(41, 46, 57, 0.45);
   min-height: 58px;
   display: grid;
   grid-template-columns: 28px 1fr;
@@ -60,7 +66,7 @@
 
 .skill-item i {
   font-size: 1.2rem;
-  color: #f4e9ff;
+  color: #e8edf5;
 }
 
 .skill-item span {
@@ -81,8 +87,8 @@
 #vision-text {
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   line-height: 1.65;
-  color: #f6e8ff;
-  text-shadow: 0 0 8px rgba(174, 127, 255, 0.45);
+  color: #e8edf5;
+  text-shadow: 0 0 8px rgba(156, 166, 182, 0.45);
 }
 
 #project-title {
@@ -90,27 +96,63 @@
 }
 
 .project-canvas-grid {
-  width: min(900px, 95vw);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(980px, 96vw);
+  position: relative;
+  overflow: hidden;
+  margin-top: 18px;
+  padding: 16px 8px 22px;
+}
+
+.project-canvas-grid::before,
+.project-canvas-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.project-canvas-grid::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(9, 11, 15, 0.95), transparent);
+}
+
+.project-canvas-grid::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(9, 11, 15, 0.95), transparent);
+}
+
+.project-orbit-track {
+  display: flex;
+  align-items: stretch;
   gap: 14px;
-  margin-top: 12px;
+  width: max-content;
+}
+
+.project-canvas-grid.is-orbiting .project-orbit-track {
+  animation: orbitRight 18s linear infinite;
+}
+
+.project-canvas-grid.is-orbiting:hover .project-orbit-track {
+  animation-play-state: paused;
 }
 
 .project-window {
-  border: 1px solid rgba(189, 143, 255, 0.65);
-  background: rgba(46, 15, 96, 0.44);
+  border: 1px solid rgba(153, 164, 181, 0.62);
+  background: rgba(31, 35, 44, 0.5);
   border-radius: 12px;
   padding: 10px;
   cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform 220ms ease, box-shadow 240ms ease, border-color 220ms ease;
+  transition: box-shadow 240ms ease, border-color 220ms ease;
+  min-width: 228px;
+  max-width: 228px;
 }
 
 .project-window:hover {
-  transform: translateY(-3px);
-  border-color: rgba(223, 194, 255, 0.95);
-  box-shadow: 0 14px 26px rgba(73, 20, 131, 0.5);
+  border-color: rgba(201, 211, 224, 0.95);
+  box-shadow: 0 14px 26px rgba(14, 17, 24, 0.56);
 }
 
 .project-preview {
@@ -118,8 +160,8 @@
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(178, 139, 255, 0.45);
-  background: radial-gradient(circle at 20% 20%, rgba(185, 127, 255, 0.2), rgba(36, 10, 78, 0.85));
+  border: 1px solid rgba(154, 166, 185, 0.42);
+  background: radial-gradient(circle at 20% 20%, rgba(171, 183, 201, 0.18), rgba(20, 23, 30, 0.9));
 }
 
 .project-preview iframe {
@@ -145,10 +187,19 @@
 
 .project-tag {
   font-size: 0.7rem;
-  color: #e3ccff;
-  border: 1px solid rgba(190, 148, 255, 0.54);
+  color: #dbe2ec;
+  border: 1px solid rgba(157, 168, 184, 0.54);
   padding: 2px 7px;
   border-radius: 999px;
+}
+
+@keyframes orbitRight {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 @media (max-width: 900px) {
@@ -161,12 +212,33 @@
   }
 
   .project-canvas-grid {
+    overflow: visible;
+    padding: 0;
+    width: min(900px, 95vw);
+  }
+
+  .project-canvas-grid::before,
+  .project-canvas-grid::after {
+    display: none;
+  }
+
+  .project-orbit-track {
+    width: 100%;
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .project-window {
+    min-width: 0;
+    max-width: none;
   }
 }
 
 @media (max-width: 560px) {
-  .project-canvas-grid {
+  .project-orbit-track {
     grid-template-columns: 1fr;
   }
 }
