@@ -1,4 +1,4 @@
-﻿const panels = Array.from(document.querySelectorAll(".panel"));
+const panels = Array.from(document.querySelectorAll(".panel"));
 const stack = document.getElementById("app");
 let activeIndex = 0;
 let busy = false;
@@ -19,7 +19,7 @@ function renderProjectGrid() {
   if (!projectGrid) return;
   projectGrid.innerHTML = "";
   const useOrbitTrack = window.innerWidth > 900;
-  const orbitCycles = useOrbitTrack ? 3 : 1;
+  const orbitCycles = useOrbitTrack ? 2 : 1;
   const loopedProjects = Array.from({ length: orbitCycles }, () => projects).flat();
   const track = document.createElement("div");
   track.className = "project-orbit-track";
@@ -34,7 +34,7 @@ function renderProjectGrid() {
 
     const preview = document.createElement("div");
     preview.className = "project-preview";
-    preview.innerHTML = `<iframe src="${project.href}" title="${project.name} preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+    preview.innerHTML = `<span class="project-preview-text">${project.name}</span>`;
 
     const meta = document.createElement("div");
     meta.className = "project-meta";
@@ -165,7 +165,7 @@ document.querySelectorAll("[data-open]").forEach((trigger) => {
 const orbZone = document.querySelector(".cursor-orb-zone");
 const trail = document.getElementById("cursor-trail");
 const balls = [];
-const trailCount = 14;
+const trailCount = 8;
 
 if (orbZone && trail) {
   for (let i = 0; i < trailCount; i += 1) {
